@@ -1,15 +1,96 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fdfdfc;
   --foreground: #171717;
+
+  --mid: #70665c;
+  --gold: #a6843f;
+  --light-gold: #b49a64;
+  --dark: #3b332b;
+  --brown: #6b4b35;
+  --section-background: #f9f8f5;
+  --input: #dedad1;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-gold: var(--gold);
+  --color-light-gold: var(--light-gold);
+  --color-mid: var(--mid);
+  --color-dark: var(--dark);
+  --color-brown: var(--brown);
+  --color-section-background: var(--section-background);
+  --color-input: var(--input);
+
+  --font-mulish: var(--font-mulish);
+  --font-cormorant-garamond: var(--font-cormorant-garamond);
+}
+
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@utility flex-col-center {
+  @apply flex flex-col items-center justify-center;
+}
+
+@utility font-cormorant-garamond {
+  font-family: var(--font-cormorant-garamond);
+}
+
+@utility simple-text {
+  @apply text-dark text-[16px] text-center max-w-160;
+  font-family: var(--font-cormorant-garamond);
+}
+
+
+@layer base {
+  h1 {
+    @apply text-3xl sm:text-5xl text-gold text-center font-bold my-6;
+  }
+
+  h2 {
+    @apply text-2xl sm:text-3xl text-dark text-center my-4;
+  }
+
+  h3 {
+    @apply text-sm text-center text-gold;
+    font-family: var(--font-cormorant-garamond);
+  }
+
+  h4 {
+    @apply text-2xl text-gold text-center font-bold my-6;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    @apply w-full h-10 sm:h-14 rounded-lg bg-input px-5 text-dark placeholder:text-dark placeholder:font-mulish outline-none focus:ring-2 focus:ring-gold transition appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none;
+  }
+
+  button {
+    @apply w-full bg-gold text-white font-bold font-mulish py-2 sm:py-3 px-6 rounded-lg hover:bg-light-gold cursor-pointer outline-0 transition;
+  }
+}
+
+@layer components {
+  #hero {
+    @apply flex-center flex-col py-20 bg-cover bg-center bg-no-repeat;
+    background-image: url("/images/hero.jpeg");
+  }
+
+  .countdown-item {
+    @apply flex-col-center py-1 sm:py-4 px-3 sm:px-6 border border-light-gold text-light-gold rounded-lg shadow-xl;
+  }
+
+  .form-label {
+    @apply block mb-3 text-[15px] text-gold font-mulish;
+  }
+
+  .radio-label {
+    @apply flex items-center gap-3 cursor-pointer text-gold font-mulish;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +103,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mulish);
 }
