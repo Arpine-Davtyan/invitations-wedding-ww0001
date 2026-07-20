@@ -63,9 +63,9 @@ export default function RSVPForm() {
               <input
                 type="radio"
                 name="attendance"
+                className="accent-gold"
                 checked={attendance}
                 onChange={() => setAttendance(true)}
-                required
               />
 
               <span className="text-gold font-mulish">
@@ -77,6 +77,7 @@ export default function RSVPForm() {
               <input
                 type="radio"
                 name="attendance"
+                className="accent-gold"
                 checked={!attendance}
                 onChange={() => setAttendance(false)}
               />
