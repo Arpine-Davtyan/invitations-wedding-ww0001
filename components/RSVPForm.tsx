@@ -69,7 +69,7 @@ export default function RSVPForm() {
               />
 
               <span className="text-gold font-mulish">
-                Joyfully Accepts
+                Happily Accepts
               </span>
             </label>
 
