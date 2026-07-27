@@ -27,7 +27,7 @@ const Hero = () => {
     };
 
     return (
-        <section id="hero">
+        <section id="hero" className="h-screen">
             <motion.div
                 variants={stagger}
                 initial="hidden"
