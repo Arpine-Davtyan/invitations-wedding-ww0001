@@ -59,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${mulish.variable} ${cormorantGaramond.variable} h-full antialiased`}
+      className={`${mulish.variable} ${cormorantGaramond.variable} h-full antialiased hide-scrollbar`}
     >
       <body className="min-h-full flex flex-col">
         {children}
