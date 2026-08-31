@@ -1,9 +1,9 @@
 export const weddingInfo = {
     name: "Isabelle & Marco",
-    date: "Aug 30, 2026",
+    date: "Oct 20, 2026",
     time: "17:00",
     location: "Villa Toscana, Napa Valley, California",
-    countdownDate: "2026-08-30T15:00:00",
+    countdownDate: "2026-10-20T15:00:00",
     audioUrl: "/music/wedding.mp3",
 };
 

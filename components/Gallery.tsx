@@ -13,7 +13,7 @@ export default function Gallery() {
                 <motion.div
                     key={index}
                     className={`
-                        relative w-full h-[350px] sm:h-[450px] md:h-[600px] overflow-hidden rounded-[32px] shadow-2xl
+                        relative w-full h-87 sm:h-112 md:h-150 overflow-hidden rounded-4xl shadow-2xl
                         ${index % 2 !== 0 ? "md:mt-20" : ""}
                     `}
                     initial={{
@@ -42,6 +42,7 @@ export default function Gallery() {
                         sizes="(max-width: 768px) 50vw, 25vw"
                         className="object-cover transition-transform duration-700 hover:scale-110"
                         priority={index === 0}
+                        quality={75}
                     />
                 </motion.div>
             ))}
