@@ -14,7 +14,7 @@ const Footer = () => {
                     weight="fill"
                     className="text-gold "
                 />
-                <p className="text-mid text-lg font-cormorant-garamond">{weddingInfo.location}</p>
+                <p className="text-mid text-center text-lg font-cormorant-garamond">{weddingInfo.location}</p>
             </div>
         </footer>
     )

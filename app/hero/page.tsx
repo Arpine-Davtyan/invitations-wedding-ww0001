@@ -56,7 +56,7 @@ const Hero = () => {
 
                 <motion.p
                     variants={textReveal}
-                    className="text-mid text-lg font-cormorant-garamond"
+                    className="text-mid text-lg text-center font-cormorant-garamond"
                 >
                     {weddingInfo.location}
                 </motion.p>
@@ -64,7 +64,7 @@ const Hero = () => {
                 <motion.button
                     variants={fadeScale}
                     onClick={toggleMusic}
-                    className={`flex-center w-[48px] h-[48px] p-0 rounded-full bg-gold transition ${
+                    className={`flex-center w-12 h-12 p-0 rounded-full bg-gold transition ${
                         isPlaying ? "animate-pulse" : ""
                     }`}
                     aria-label="Toggle music"
