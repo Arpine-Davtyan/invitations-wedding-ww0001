@@ -18,7 +18,7 @@ const Success = ({ attendance, fullName, number }: SuccessProps) => {
             {attendance ? (
                 <>
                     <h2 className="flex-center text-3xl font-cormorant-garamond font-bold text-gold">
-                        Thank you, {fullName}!
+                        Thank you
                         <HeartIcon
                             size={20}
                             weight="fill"
@@ -28,10 +28,6 @@ const Success = ({ attendance, fullName, number }: SuccessProps) => {
 
                     <p className="text-dark text-sm font-mulish">
                         We are so happy that you will celebrate this special day with us.
-                    </p>
-
-                    <p className="text-dark text-sm font-mulish">
-                        Guests: {number}
                     </p>
                 </>
             ) : (

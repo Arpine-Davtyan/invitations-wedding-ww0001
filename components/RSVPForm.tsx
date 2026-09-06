@@ -7,23 +7,26 @@ import Success from "./Success";
 export default function RSVPForm() {
   const [fullName, setFullName] = useState("");
   const [attendance, setAttendance] = useState(true);
-  const [number, setNumber] = useState(1);
+  const [number, setNumber] = useState<number | "">(1);
   const [isPending, startTransition] = useTransition();
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (attendance && number === "") {
+      return;
+    }
+
     startTransition(async () => {
       try {
         await createGuest({
           full_name: fullName,
           accepted: attendance,
-          number: attendance ? number : 0,
+          number: attendance ? Number(number) : 0,
         });
 
         setSubmitted(true);
-
       } catch (error) {
         console.error(error);
       }
@@ -32,7 +35,11 @@ export default function RSVPForm() {
 
   if (submitted) {
     return (
-      <Success attendance={attendance} fullName={fullName} number={number} />
+      <Success
+        attendance={attendance}
+        fullName={fullName}
+        number={number === "" ? 0 : number}
+      />
     );
   }
 
@@ -99,7 +106,10 @@ export default function RSVPForm() {
               type="number"
               min={1}
               value={number}
-              onChange={(e) => setNumber(Number(e.target.value))}
+              onChange={(e) => {
+                const value = e.target.value;
+                setNumber(value === "" ? "" : Number(value));
+              }}
               required
             />
           </div>
